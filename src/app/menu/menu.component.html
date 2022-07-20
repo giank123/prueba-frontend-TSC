@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <a class="navbar-brand" href="#">Casa De Cambio TSC</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/"><i class="fas fa-home"></i> Inicio</a>
+        </li>
+        <!-- 
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="isLogged" routerLink="/lista"> Cambiar Dolares</a>
+        </li>
+       
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="isAdmin" routerLink="/addTipoMoneda"><i class="fas fa-pen"></i> Actualizar Tipo de Cambio</a>
+        </li>
+-->
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="isLogged" routerLink="/tablaConversion"><i class="fas fa-list-alt"></i> Tabla de Conversión</a>
+        </li>
+
+        <!--
+        <li class="nav-item" >
+          <a class="nav-link" *ngIf="isLogged" routerLink="/conversion"><i class="fas fa-pen"></i> Realizar Tipo de Cambio</a>
+        </li>
+        -->
+
+        <li class="nav-item" *ngIf="isAdmin">
+          <a class="nav-link" routerLink="/nueva-tablaConversion"><i class="fas fa-plus-circle">
+          </i> Nuevo</a>
+        </li>
+  
+      </ul>
+  
+      <form class="form-inline my-2 my-lg-0">
+        <button *ngIf="!isLogged" class="btn btn-outline-success my-2 my-sm-0" routerLink="/login" type="submit">
+          <i class="fas fa-sign-in-alt"></i> Iniciar Sesión</button>
+          <button *ngIf="isLogged" class="btn btn-outline-danger my-2 my-sm-0" (click)="onLogout()" type="reset">
+            <i class="fas fa-sign-in-alt"></i>
+            <i class="fas fa-door-open"></i> Cerrar Sesión</button>
+      </form>
+  
+    </div>
+  </nav>
+  

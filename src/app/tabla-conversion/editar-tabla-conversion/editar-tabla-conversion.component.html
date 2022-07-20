@@ -1,0 +1,25 @@
+<app-menu></app-menu>
+<div class="container" *ngIf="divisa">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
+        <div class="form-group">
+          <label for="monedaOrigen">Moneda de Origen</label>
+          <input type="text" class="form-control" id="monedaOrigen" name="monedaOrigen" [(ngModel)]="divisa.monedaOrigen" required>
+        </div>
+        <div class="form-group">
+          <label for="monedaDestino">Moneda de Destino</label>
+          <input type="text" class="form-control" id="monedaDestino" name="monedaDestino" [(ngModel)]="divisa.monedaDestino" required>
+        </div>
+        <div class="form-group">
+          <label for="tipoCambio">Tipo de Cambio</label>
+          <input type="text" class="form-control" id="tipoCambio" name="tipoCambio" [(ngModel)]="divisa.tipoCambio" required>
+        </div>
+        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">
+          <i class="fas fa-pencil-alt"></i> Actualizar</button>
+        <button class="btn btn-outline-primary btn-block" routerLink="/tablaConversion">
+          <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+      </form>
+    </div>
+  </div>
+</div>

@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  authURL: 'http://localhost:8080/auth/',
+  cambioURL: "http://localhost:8080/tata/api/"
 };
 
 /*

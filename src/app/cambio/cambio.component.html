@@ -1,0 +1,47 @@
+
+<app-menu></app-menu>
+ 
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      
+      <form (ngSubmit)="onCreate()" >
+        <div class="form-group">
+            <label for="montoOrigen">Monto de Origen</label>
+            <input type="number" class="form-control" id="montoOrigen" name="montoOrigen" placeholder="Ingrese el monto a cambiar"
+            [(ngModel)]="montoOrigen" required>
+        </div>
+        
+        <div class="form-group" >
+          <label for="monedaOrigen">Moneda de Origen</label>
+         <input type="text" class="form-control" id="monedaOrigen" name="monedaOrigen" 
+         [(ngModel)]="monedaOrigen" required [disabled]="true">
+        
+        </div>
+        <div class="form-group">
+            <label for="monedaDestino">Moneda de Destino</label>
+            <input type="text" class="form-control" id="monedaDestino" name="monedaDestino" 
+            [(ngModel)]="monedaDestino" required [disabled]="true">
+        </div>
+        <div class="form-group">
+            <label for="tipoCambio">Tipo de Cambio</label>
+            <input type="number" class="form-control" id="tipoCambio" name="tipoCambio" 
+            [(ngModel)]="tipoCambio" required [disabled]="true">
+        </div>
+       
+        <div class="form-group" >
+        <label for="montoDestino">Monto de Destino</label>
+        <input type="number" class="form-control" id="montoDestino" name="montoDestino"
+         [(ngModel)]="montoDestino" required [disabled]="true">
+        </div>
+        <button class="btn btn-outline-success btn-block" >
+          <i class="fas fa-plus-circle" routerLink="/cambio/{{id}}"></i> Convertir</button>
+        <button class="btn btn-outline-primary btn-block" routerLink="/tablaConversion">
+          <i class="fas fa-arrow-alt-circle-left"></i> Volver</button>
+
+      </form>
+     
+    </div>
+  </div>
+</div>
+
